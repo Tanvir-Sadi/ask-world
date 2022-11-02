@@ -1,0 +1,19 @@
+{
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Tanvir",
+      "email": "tanvir.sadi10@northsouth.edu"
+    }
+  ],
+  "require": {
+  },
+  "autoload":  {
+    "psr-4": {
+      "App\\" : "app/",
+      "Luminous\\" : "luminous/"
+    }
+  }
+}

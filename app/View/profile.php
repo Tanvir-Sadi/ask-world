@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ask World</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="public/assets/style.css">
+    <title>Profile</title>
 </head>
-
 <body>
     <div class="line"></div>
     <nav class="navbar navbar-expand-lg bg-light">
@@ -49,7 +50,6 @@
                         </ul>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
@@ -69,14 +69,30 @@
 
         <main class="flex-grow-1">
             <div class="px-4 pt-3 border-end h-full">
-                <div class="d-flex justify-content-between border-bottom pb-3">
-                    <h1 class="fw-normal">
-                        Top Questions
-                    </h1>
-                    <button type="button" class="btn btn-primary">Ask Questions</button>
+                <div class="d-flex justify-content-start border-bottom pb-3 flex-md-row flex-column">
+                    <img class="img-thumbnail img-fluid"
+                        src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads01&accessoriesType=Kurt&hairColor=SilverGray&facialHairType=MoustacheFancy&facialHairColor=Red&clotheType=ShirtCrewNeck&clotheColor=Blue01&eyeType=Side&eyebrowType=SadConcernedNatural&mouthType=Disbelief&skinColor=Brown' />
+                    <div class="p-2 w-100">
+                        <h1 class="">User Name</h1>
+                        <h5>Member for 1 year, 4 month</h5>
+                        <div class="d-flex justify-content-between flex-column flex-lg-row">
+                            <div class="d-flex flex-column w-50">
+                                <h5 class=""><span class="badge text-bg-warning me-2">Email</span>abcd@gmail.com</h5>
+                                <h5 class=""><span class="badge text-bg-warning me-2">Date of birth</span>01 Jan 1990</h5>
+                                <h5 class=""><span class="badge text-bg-warning me-2">Website</span>aaaa.com</h5>
+                                <h5 class=""><span class="badge text-bg-warning me-2">Github</span>aaaa</h5>
+                            </div>
+                            <div class="d-flex flex-column w-50 border">
+                                <h5 class=""><span class="badge text-bg-warning mx-2">Questions</span>50</h5>
+                                <h5 class=""><span class="badge text-bg-warning mx-2">Answers</span>20</h5>
+                                <h5 class=""><span class="badge text-bg-warning mx-2">Total Points</span>90</h5>
+                                <h5 class=""><span class="badge text-bg-warning mx-2">Current Points</span>5</h5>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <section>
+                <section class="border-bottom p-2">
+                    <h3><span class="badge text-bg-warning">Posts</span></h3>
 
                     <ul class="list-group list-group-flush">
                         <li class="d-flex list-group-item py-4">
@@ -142,32 +158,10 @@
                             </div>
                         </li>
                     </ul>
-
                 </section>
-
             </div>
         </main>
-
-        <section>
-            <div class="px-4 pt-3">
-                Side Bar
-            </div>
-        </section>
     </div>
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
-        integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
-    </script>
 </body>
 
 </html>

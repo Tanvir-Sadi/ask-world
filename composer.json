@@ -9,6 +9,8 @@
     }
   ],
   "require": {
+    "ext-simplexml": "*",
+    "ext-json": "*"
   },
   "autoload":  {
     "psr-4": {

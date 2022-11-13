@@ -10,7 +10,9 @@
   ],
   "require": {
     "ext-simplexml": "*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "vlucas/phpdotenv": "^2.0",
+    "ext-pdo": "*"
   },
   "autoload":  {
     "psr-4": {

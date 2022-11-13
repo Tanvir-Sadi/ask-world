@@ -4,23 +4,28 @@ namespace Luminous\View;
 
 class View
 {
-    protected static $data=[];
     protected static $slot=null;
 
     public static function call($page, $data=null, $layout=null){
         if ($layout == null)
-            self::renderPage($page,['hi','hello']);
+            self::renderPage($page,$data);
         else
             self::renderLayout($page,$layout, $data);
     }
 
     static function renderPage($page, $data=null){
-        self::$data = $data;
+        if($data){
+            foreach ($data as $key=>$value)
+                $$key=$value;
+        }
         require_once self::path($page);
     }
 
     static function renderLayout($page, $layout, $data=null){
-        self::$data = $data;
+        if($data){
+            foreach ($data as $key=>$value)
+                $$key=$value;
+        }
         self::$slot= self::renderSlot($page);
         require_once self::view($layout,'Layouts');
     }
@@ -35,7 +40,10 @@ class View
     }
 
     static function renderSlot($page, $data=null){
-        self::$data = $data;
+        if($data){
+            foreach ($data as $key=>$value)
+                $$key=$value;
+        }
         return self::view($page);
     }
 }

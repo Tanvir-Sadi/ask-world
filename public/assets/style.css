@@ -1,15 +1,11 @@
 .img-avatar{
     width: 35px;
-    height: auto;
+    height: 35px;
 }
 
 .line{
     height: 3px;
     background-color: #f48225;
-}
-
-.left-nav{
-    width: 310px;
 }
 
 .w-6{

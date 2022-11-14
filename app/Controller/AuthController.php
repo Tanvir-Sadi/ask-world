@@ -16,6 +16,13 @@ class AuthController extends Controller
     }
 
     public function create(){
+        if (!isLoggedIn()){
+            $_SESSION['name'] = $_COOKIE['name']    ??  null;
+            $_SESSION['email'] = $_COOKIE['email']  ??  null;
+            if (isLoggedIn()){
+                header('Location: /askWorld', true, 303);
+            }
+        }
         View::call('login',null,'guest');
     }
 
@@ -40,10 +47,16 @@ class AuthController extends Controller
         if(password_verify($request->password, $user->password)) {
             $_SESSION['name'] = $user->name;
             $_SESSION['email'] = $user->email;
+            if (isset($request->remember_me)){
+                setcookie('name', $user->name, time() + (86400 * 30), "/"); // 86400 = 1 day
+                setcookie('email', $user->email, time() + (86400 * 30), "/"); // 86400 = 1 day
+            }
             header('Location: /askWorld', true, 303);
         }else{
             $errors['password'][] = ['password'=> 'Password Does not match with current user'];
             View::call('login',compact('errors'),'guest');
+            return;
+
         }
     }
 
@@ -51,6 +64,8 @@ class AuthController extends Controller
         loggedIn();
         unset($_SESSION['name']);
         unset($_SESSION['email']);
+        setcookie('name', null, -1, '/');
+        setcookie('email', null, -1, '/');
         header('Location: /askWorld/login', true, 303);
     }
 }

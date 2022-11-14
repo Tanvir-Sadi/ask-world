@@ -18,7 +18,7 @@
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 </form>
                 <a>
-                    <span><?= auth()['name'] ?></span>
+                    <span><?= auth()->name ?></span>
                     <img
                             class="img-thumbnail img-avatar"
                             src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads01&accessoriesType=Kurt&hairColor=SilverGray&facialHairType=MoustacheFancy&facialHairColor=Red&clotheType=ShirtCrewNeck&clotheColor=Blue01&eyeType=Side&eyebrowType=SadConcernedNatural&mouthType=Disbelief&skinColor=Brown' />

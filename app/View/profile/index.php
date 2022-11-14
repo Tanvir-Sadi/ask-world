@@ -4,11 +4,11 @@
             <img class="img-thumbnail img-fluid"
                  src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads01&accessoriesType=Kurt&hairColor=SilverGray&facialHairType=MoustacheFancy&facialHairColor=Red&clotheType=ShirtCrewNeck&clotheColor=Blue01&eyeType=Side&eyebrowType=SadConcernedNatural&mouthType=Disbelief&skinColor=Brown' />
             <div class="p-2 w-100">
-                <h1 class="mx-2">User Name</h1>
+                <h1 class="mx-2"><?= auth()->name ?></h1>
                 <h6 class="mx-2">Member for 1 year, 4 month</h6>
                 <div class="d-flex justify-content-between flex-column flex-lg-row">
                     <div class="d-flex flex-column w-50 border-start flex-wrap">
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Email</span>abcd@gmail.com</h5>
+                        <h5 class=""><span class="badge text-bg-warning mx-2">Email</span><?= auth()->email ?></h5>
                         <h5 class=""><span class="badge text-bg-warning mx-2">Date of birth</span>01 Jan 1990</h5>
                         <h5 class=""><span class="badge text-bg-warning mx-2">Website</span>aaaa.com</h5>
                         <h5 class=""><span class="badge text-bg-warning mx-2">Github</span>aaaa</h5>

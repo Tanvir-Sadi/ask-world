@@ -2,6 +2,7 @@
 session_start();
 session_regenerate_id();
 
+use App\Controller\AnswerController;
 use App\Controller\RegisteredUserController;
 use Luminous\Route\Router;
 use App\Controller\AuthController;
@@ -21,8 +22,11 @@ Router::get('', [QuestionController::class, 'index']);
 Router::get('/profile', [AuthController::class, 'profile']);
 
 Router::get('/question', [QuestionController::class, 'index']);
-Router::get('/question/$question', [QuestionController::class, 'show']);
+Router::post('/question', [QuestionController::class, 'store']);
 Router::get('/question/create', [QuestionController::class, 'create']);
+Router::get('/question/$question', [QuestionController::class, 'show']);
+
+Router::post('/question/$question/answer',[AnswerController::class, 'store']);
 
 Router::get('/package', [PackageController::class, 'index']);
 

@@ -52,7 +52,7 @@ class Request
         $className = 'App\Model\\' . $property;
         $obj = new $className;
         $response = $obj->isUnique($attribute, $this->{$attribute});
-        if ($response->c)
+        if ($response)
             $this->errorMessage[$attribute][] = $this->error['unique'];
     }
 
@@ -60,7 +60,7 @@ class Request
         $className = 'App\Model\\' . $property;
         $obj = new $className;
         $response = $obj->isUnique($attribute, $this->{$attribute});
-        if ($response->c == 0)
+        if ($response == 0)
             $this->errorMessage[$attribute][] = $this->error['exist'];
     }
 

@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Model\Answer;
 use App\Model\Question;
 use App\Model\Tag;
+use App\Model\User;
 use Luminous\Request\Request;
 use Luminous\View\View;
 use Luminous\Controller\Controller;
+use Parsedown;
 
 
 class QuestionController extends Controller
@@ -17,11 +19,13 @@ class QuestionController extends Controller
         $question = new Question();
         $tag = new Tag();
         $questions = $question->all();
+        $parseDown = new Parsedown();
 
         if ($questions==[]){
             View::call('question.index',compact('questions'),'app');
             return;
         }
+
 
         $ids = [];
         foreach($questions as $question) {
@@ -38,9 +42,11 @@ class QuestionController extends Controller
             $grouped_tag[$tag->question_id][] = $tag;
         }
 
-        foreach ($questions as $question)
+        foreach ($questions as $question){
+            $question->problem_detail = $parseDown->text($question->problem_detail);
+            $question->problem_result = $parseDown->text($question->problem_result);
             $question->tag = $grouped_tag[$question->id]??null;
-
+        }
         View::call('question.index',compact('questions'),'app');
     }
 
@@ -48,16 +54,22 @@ class QuestionController extends Controller
         loggedIn();
         $question = new Question();
         $answer = new Answer();
-        $question = $question->find($this->question);
-        $stmt = $answer->query("SELECT * FROM answer WHERE question_id={$question->id}");
-        $answers = $stmt->fetchAll($answer::FETCH_CLASS, get_class($answer));
+        $user = new User();
+        $parseDown = new Parsedown();
 
+        $question = $question->find($this->question);
+        $stmt = $answer->query("SELECT * FROM answer WHERE question_id={$question->id} ORDER BY updated_at DESC");
+        $answers = $stmt->fetchAll($answer::FETCH_CLASS, get_class($answer));
+        $question->user = $user->find($question->user_id);
 
         $grouped_answer=[];
         foreach ($answers as $answer){
+            $answer->description = $parseDown->text($answer->description);
             $grouped_tag[$answer->question_id][] = $answer;
         }
         $question->answers = $grouped_tag[$question->id]??null;
+        $question->problem_detail = $parseDown->text($question->problem_detail);
+        $question->problem_result = $parseDown->text($question->problem_result);
 
         View::call('question.show',compact('question'),'app');
     }
@@ -107,7 +119,7 @@ class QuestionController extends Controller
                 'tag_id'=>$tag->id
             ]);
         }
-        header('Location: /askWorld', true, 303);
+        header('Location: ', true, 303);
     }
 
 

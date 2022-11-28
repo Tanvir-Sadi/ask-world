@@ -1,94 +1,52 @@
-<main class="col-8">
-    <div class="px-4 pt-3 border-end h-full">
-        <div class="d-flex justify-content-start border-bottom pb-3 flex-md-row flex-column">
-            <img class="img-thumbnail img-fluid"
-                 src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairDreads01&accessoriesType=Kurt&hairColor=SilverGray&facialHairType=MoustacheFancy&facialHairColor=Red&clotheType=ShirtCrewNeck&clotheColor=Blue01&eyeType=Side&eyebrowType=SadConcernedNatural&mouthType=Disbelief&skinColor=Brown' />
-            <div class="p-2 w-100">
-                <h1 class="mx-2"><?= auth()->name ?></h1>
-                <h6 class="mx-2">Member for 1 year, 4 month</h6>
-                <div class="d-flex justify-content-between flex-column flex-lg-row">
-                    <div class="d-flex flex-column w-50 border-start flex-wrap">
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Email</span><?= auth()->email ?></h5>
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Date of birth</span>01 Jan 1990</h5>
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Website</span>aaaa.com</h5>
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Github</span>aaaa</h5>
-                    </div>
-                    <div class="d-flex flex-column w-50 border-start">
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Questions</span>50</h5>
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Answers</span>20</h5>
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Total Points</span>90</h5>
-                        <h5 class=""><span class="badge text-bg-warning mx-2">Current Points</span>5</h5>
-                    </div>
-                </div>
-            </div>
+<main class="m-2">
+    <div class="flex flex-row-reverse gap-2 justify-between items-end bg-white shadow-sm rounded p-3 my-2">
+        <img src="assets\img\avatar.svg" />
+        <div>
+            <h1 class="text-2xl"><?= auth()->name ?></h1>
+            <h6 class="text-sm mb-2">Joined at <?= date_format(date_create(auth()->created_at), "Y-m-d")?></h6>
+            <hr>
+            <h5><span class="font-semibold">Email: </span><?= auth()->email ?></h5>
         </div>
-        <section class="border-bottom p-2">
-            <h3><span class="badge text-bg-warning">Posts</span></h3>
-
-            <ul class="list-group list-group-flush">
-                <li class="d-flex list-group-item py-4">
-                    <div class="pe-3 fs-6 fw-light text-nowrap">
-                        <p class="text-center">0 Votes</p>
-                        <div class="border px-2 mb-3">1 Answer</div>
-                        <p class="text-center">15 Views</p>
-                    </div>
-                    <div class="">
-                        <h6>An item</h6>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem rem ex quis enim laudantium ipsum maxime, nisi suscipit temporibus, eaque ea! Doloremque laboriosam expedita voluptate quae nihil voluptates, architecto possimus.
-                        </p>
-                        <div class="">
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                        </div>
-
-                    </div>
-                </li>
-
-                <li class="d-flex list-group-item py-4">
-                    <div class="pe-3 fs-6 fw-light text-nowrap">
-                        <p class="text-center">0 Votes</p>
-                        <div class="border px-2 mb-3 bg-success text-light">1 Answer</div>
-                        <p class="text-center">15 Views</p>
-                    </div>
-                    <div class="">
-                        <h6>An item</h6>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem rem ex quis enim laudantium ipsum maxime, nisi suscipit temporibus, eaque ea! Doloremque laboriosam expedita voluptate quae nihil voluptates, architecto possimus.
-                        </p>
-                        <div class="">
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                        </div>
-
-                    </div>
-                </li>
-
-                <li class="d-flex list-group-item py-4">
-                    <div class="pe-3 fs-6 fw-light text-nowrap">
-                        <p class="text-center">0 Votes</p>
-                        <div class="border px-2 mb-3">1 Answer</div>
-                        <p class="text-center">15 Views</p>
-                    </div>
-                    <div class="">
-                        <h6>An item</h6>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem rem ex quis enim laudantium ipsum maxime, nisi suscipit temporibus, eaque ea! Doloremque laboriosam expedita voluptate quae nihil voluptates, architecto possimus.
-                        </p>
-                        <div class="">
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                            <span class="badge rounded-pill text-bg-dark">Dark</span>
-                        </div>
-
-                    </div>
-                </li>
-            </ul>
-        </section>
     </div>
+
+        <div class="flex justify-between items-center bg-white shadow-sm rounded p-3">
+            <h1 class="text-2xl">
+                Your Asked Questions
+            </h1>
+            <a href="/question/create" class="bg-amber-500 rounded p-2 text-white font-semibold hover:bg-amber-600">Ask
+                Questions</a>
+        </div>
+
+        <section>
+            <ul class="">
+                <?php foreach ($questions as $question): ?>
+                <li
+                    class="flex flex-row-reverse gap-2 justify-between items-center bg-white shadow-sm rounded p-3 my-2">
+
+                    <div class=" basis-5/6">
+                        <a class="" href="question/<?= $question->id ?>">
+                            <h6 class="font-semibold my-2"><?= $question->title ?></h6>
+                        </a>
+                        <article class="text-sm line-clamp-6 problem_detail">
+                            <?= $question->problem_detail ?>
+                        </article>
+                        <div class="my-2">
+                            <?php foreach ($question->tag ?: [] as $tag):?>
+                            <span
+                                class="mr-1 text-xs text-center border rounded p-1 bg-green-50 font-mono"><?= $tag->name ?></span>
+                            <?php endforeach;?>
+                        </div>
+                    </div>
+
+                    <div class="text-sm basis-1/6 lg:p-3">
+                        <p class="my-2 text-center">0 Votes</p>
+                        <p class="my-2 text-center border rounded py-1 bg-green-600 text-white">1 Answer</p>
+                        <p class="my-2 text-center">15 Views</p>
+                    </div>
+                </li>
+                <?php endforeach; ?>
+            </ul>
+
+        </section>
+
 </main>

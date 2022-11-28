@@ -38,6 +38,6 @@ class RegisteredUserController extends Controller
         $_SESSION['name'] = $request->name;
         $_SESSION['email'] = $request->email;
 
-        header('Location: /askWorld', true, 303);
+        header('Location: /', true, 303);
     }
 }

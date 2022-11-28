@@ -48,7 +48,7 @@ class AnswerController extends Controller
             'user_id'     => auth()->id
         ]);
 
-        header('Location: /askWorld/question/'.$question->id, true, 303);
+        header('Location: /question/'.$question->id, true, 303);
     }
 
 }

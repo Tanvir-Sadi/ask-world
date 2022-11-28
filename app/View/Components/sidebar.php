@@ -1,5 +1,1 @@
-<section class="col-2">
-    <div class="px-4 pt-3">
-        <img src="/askWorld/public/assets/img/skyscraper-ad.png"/>
-    </div>
-</section>
+<img class="max-w-48 ml-5 mt-5" src="/assets/img/burgerking.png"/>

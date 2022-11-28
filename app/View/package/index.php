@@ -1,112 +1,186 @@
-<main class="col-8">
-    <?= json_encode($data) ?>
-    <div class="px-4 pt-3 border-end h-full">
-        <div class="d-flex justify-content-between border-bottom pb-3">
-            <h1 class="fw-normal">
-                Buy Package
-            </h1>
-        </div>
-
-        <ol class="list-group list-group-numbered">
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Silver Package
-                    </div>
-                    Content for list item
-                </div>
-                <span class="badge bg-primary rounded-pill">$14</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Gold Package
-                    </div>
-                    Content for list item
-                </div>
-                <span class="badge bg-primary rounded-pill">$30</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-start">
-                <div class="ms-2 me-auto">
-                    <div class="fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Plutinum Package
-                    </div>
-                    Content for list item
-                </div>
-                <span class="badge bg-primary rounded-pill">$100</span>
-            </li>
-        </ol>
+<div class="p-3">
+    <div class="flex justify-between items-center bg-white shadow-sm rounded p-3">
+        <h1 class="text-2xl">
+            Buy Package
+        </h1>
+        <a href="/package/history" class="font-semibold underline">Order History</a>
     </div>
-</main>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="card  rounded-3">
-                    <div class="card-body">
+    <section class="mt-2 bg-white shadow-sm rounded p-3">
+        <section class="text-gray-600 body-font overflow-hidden">
+            <div class="flex flex-wrap -m-4">
+                <div class="p-4 xl:w-1/3 w-full">
+                    <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                        <h2 class="text-sm tracking-widest title-font mb-1 font-medium">START</h2>
+                        <h1 class="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">Free</h1>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Vexillologist pitchfork
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Tumeric plaid portland
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-6">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Mixtape chillwave tumeric
+                        </p>
+                        <button
+                            class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Button
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.
+                        </p>
+                    </div>
+                </div>
+                <div class="p-4 xl:w-1/3 w-full">
+                    <div
+                        class="h-full p-6 rounded-lg border-2 border-amber-500 flex flex-col relative overflow-hidden">
+                        <span
+                            class="bg-amber-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">POPULAR</span>
+                        <h2 class="text-sm tracking-widest title-font mb-1 font-medium">1000 Questions</h2>
+                        <h1
+                            class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                            <span>$10</span>
+                            <span class="text-lg ml-1 font-normal text-gray-500">/mo</span>
+                        </h1>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Vexillologist pitchfork
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Tumeric plaid portland
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Hexagon neutra unicorn
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-6">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Mixtape chillwave tumeric
+                        </p>
+                        <form action="/package" method="POST" class="mt-auto">
+                            <input type="hidden" name="priceId" value="price_1M8pUmE2z3vC17OQBIW7nWFm" />
 
-                        <form class="">
-                            <div class="form-outline form-white mb-4">
-                                <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
-                                       placeholder="Cardholder's Name" />
-
-                            </div>
-
-                            <div class="form-outline form-white mb-4">
-                                <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
-                                       placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
-
-                            </div>
-
-                            <div class="row mb-4">
-                                <div class="col-md-6">
-                                    <div class="form-outline form-white">
-                                        <input type="text" id="typeExp" class="form-control form-control-lg"
-                                               placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
-
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-outline form-white">
-                                        <input type="password" id="typeText" class="form-control form-control-lg"
-                                               placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
-
-                                    </div>
-                                </div>
-                            </div>
-
+                            <button id="checkout-and-portal-button" type="submit" class="flex items-center text-white bg-amber-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-amber-600 rounded">Button
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                     stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
                         </form>
 
-                        <hr class="my-4">
+                        <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.
+                        </p>
+                    </div>
+                </div>
 
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-2">Subtotal</p>
-                            <p class="mb-2">$4798.00</p>
-                        </div>
+                <div class="p-4 xl:w-1/3 w-full">
+                    <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                        <h2 class="text-sm tracking-widest title-font mb-1 font-medium">SPECIAL</h2>
+                        <h1
+                            class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                            <span>$72</span>
+                            <span class="text-lg ml-1 font-normal text-gray-500">/mo</span>
+                        </h1>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Vexillologist pitchfork
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Tumeric plaid portland
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Hexagon neutra unicorn
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-2">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Vexillologist pitchfork
+                        </p>
+                        <p class="flex items-center text-gray-600 mb-6">
+                            <span
+                                class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5"></path>
+                                </svg>
+                            </span>Mixtape chillwave tumeric
+                        </p>
+                        <form action="/package" method="POST" class="mt-auto">
+                            <input type="hidden" name="priceId" value="price_1M8pUmE2z3vC17OQuotxFC3n" />
 
-                        <div class="d-flex justify-content-between">
-                            <p class="mb-2">Shipping</p>
-                            <p class="mb-2">$20.00</p>
-                        </div>
-
-                        <div class="d-flex justify-content-between mb-4">
-                            <p class="mb-2">Total(Incl. taxes)</p>
-                            <p class="mb-2">$4818.00</p>
-                        </div>
-
-
+                            <button id="checkout-and-portal-button" type="submit" class="flex items-center text-white bg-amber-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-amber-600 rounded">Button
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                     stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </button>
+                        </form>
+                        <p class="text-xs text-gray-500 mt-3">Literally you probably haven't heard of them jean shorts.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
+        </section>
 </div>

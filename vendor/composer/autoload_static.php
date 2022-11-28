@@ -14,6 +14,7 @@ class ComposerStaticInit3fa2d90369b49a68fa73acd502af4af8
         'S' => 
         array (
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Stripe\\' => 7,
         ),
         'L' => 
         array (
@@ -34,6 +35,10 @@ class ComposerStaticInit3fa2d90369b49a68fa73acd502af4af8
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
         ),
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
+        ),
         'Luminous\\' => 
         array (
             0 => __DIR__ . '/../..' . '/luminous',
@@ -48,6 +53,16 @@ class ComposerStaticInit3fa2d90369b49a68fa73acd502af4af8
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'P' => 
+        array (
+            'Parsedown' => 
+            array (
+                0 => __DIR__ . '/..' . '/erusev/parsedown',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
@@ -57,6 +72,7 @@ class ComposerStaticInit3fa2d90369b49a68fa73acd502af4af8
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit3fa2d90369b49a68fa73acd502af4af8::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit3fa2d90369b49a68fa73acd502af4af8::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit3fa2d90369b49a68fa73acd502af4af8::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit3fa2d90369b49a68fa73acd502af4af8::$classMap;
 
         }, null, ClassLoader::class);

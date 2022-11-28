@@ -1,17 +1,22 @@
 <!doctype html>
 <html lang="en">
-    <?php include_once __DIR__.'/../Components/head.php' ?>
-<body>
-    <?php include_once __DIR__.'/../Components/topNav.php' ?>
-    <div class="container">
-        <div class="row">
-            <?php include_once __DIR__.'/../Components/sideNav.php' ?>
-            <?php require_once self::$slot?>
-            <?php include_once __DIR__.'/../Components/sidebar.php' ?>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.js"></script>
+<?php include_once __DIR__.'/../Components/head.php' ?>
 
-</body>
+    <body class="bg-slate-100">
+        <?php include_once __DIR__.'/../Components/topNav.php' ?>
+        <div class="container mx-auto">
+            <div class="flex flex-row justify-center">
+                <?php include_once __DIR__.'/../Components/sideNav.php' ?>
+                <main class="basis-1/2 border-r">
+                    <?php require_once self::$slot?>
+                </main>
+                <aside class="basis-1/4">
+                    <?php include_once __DIR__.'/../Components/sidebar.php' ?>
+                </aside>
+            </div>
+        </div>
+        <?php include_once __DIR__.'/../Components/search_modal.php' ?>
+        <script src="http://<?= $_SERVER['HTTP_HOST'] ?>/assets/script.js"></script>
+    </body>
 
 </html>

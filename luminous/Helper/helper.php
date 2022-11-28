@@ -15,7 +15,7 @@ function isLoggedIn(){
 
 function loggedIn(){
     if(!(isset($_SESSION['name']) && isset($_SESSION['email']))){
-        header('Location: /askWorld/login', true, 303);
+        header('Location: /login', true, 303);
         die();
     }
 }

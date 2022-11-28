@@ -28,7 +28,7 @@ class Router{
 
     private static function route($route, $controller){
 
-        $request_url = str_replace('/askWorld','',$_SERVER['REQUEST_URI']);
+        $request_url = str_replace('','',$_SERVER['REQUEST_URI']);
 
         $request_url = filter_var($request_url, FILTER_SANITIZE_URL);
         $request_url = rtrim($request_url, '/');

@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Model;
-use Luminous\Model\Model;
+use Luminous\Model\Authenticable;
 
-class User extends Model
+class User extends Authenticable
 {
 
 }

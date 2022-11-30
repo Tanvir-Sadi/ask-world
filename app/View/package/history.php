@@ -29,7 +29,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($histories->data as $history):?>
+                <?php foreach ($histories?->data ?:[] as $history):?>
                 <tr>
                     <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap">
                         <?= $history->items->data[0]->plan->nickname?>

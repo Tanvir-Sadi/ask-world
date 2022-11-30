@@ -14,7 +14,8 @@
     "vlucas/phpdotenv": "^2.0",
     "ext-pdo": "*",
     "erusev/parsedown": "^1.7",
-    "stripe/stripe-php": "^10.0"
+    "stripe/stripe-php": "^10.0",
+    "ext-openssl": "*"
   },
   "autoload":  {
     "psr-4": {

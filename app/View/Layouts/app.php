@@ -5,12 +5,15 @@
     <body class="bg-slate-100">
         <?php include_once __DIR__.'/../Components/topNav.php' ?>
         <div class="container mx-auto">
-            <div class="flex flex-row justify-center">
+            <div class="flex flex-row flex-wrap justify-center">
+                <nav class="md:basis-1/5 basis-1 p-5">
                 <?php include_once __DIR__.'/../Components/sideNav.php' ?>
-                <main class="basis-1/2 border-r">
+                </nav>
+
+                <main class="basis-1/2 border-x">
                     <?php require_once self::$slot?>
                 </main>
-                <aside class="basis-1/4">
+                <aside class="basis-1/4 md:block hidden">
                     <?php include_once __DIR__.'/../Components/sidebar.php' ?>
                 </aside>
             </div>

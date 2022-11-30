@@ -2,19 +2,22 @@
 
 use App\Model\User;
 
+/**
+ * @return Luminous\Model\Authenticable
+ */
 function auth(){
     $user = new User();
-    $stmt = $user->prepare('SELECT * FROM user WHERE email= :email limit 1');
-    $stmt->execute(['email'=>$_SESSION['email']]);
-    return $stmt->fetch();
+    if (!isset($_SESSION['id']))
+        $user->startAuthSession($_COOKIE['token']);
+    return $user->find($_SESSION['id']);
 }
 
 function isLoggedIn(){
-    return isset($_SESSION['name']) && isset($_SESSION['email']);
+    return isset($_SESSION['id']);
 }
 
 function loggedIn(){
-    if(!(isset($_SESSION['name']) && isset($_SESSION['email']))){
+    if(!isset($_SESSION['id'])){
         header('Location: /login', true, 303);
         die();
     }

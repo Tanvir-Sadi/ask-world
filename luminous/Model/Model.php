@@ -8,7 +8,7 @@ class Model extends Database
 {
     /**
      * @param $attributes
-     * @return \Luminous\Model\Model
+     * @return Model
      */
     public function create($attributes){
         $keyString =  implode(",", array_keys($attributes));
@@ -19,6 +19,14 @@ class Model extends Database
         $stmt = $this->prepare($sql);
         $stmt->execute($attributes);
         return $this->find($this->lastInsertId());
+    }
+
+    public function destroy(){
+        $tableName = $this->getTableNameFromClass();
+        $sql = 'DELETE FROM '.$tableName.' WHERE id = :id';
+        echo json_encode($sql);
+        $stmt = $this->prepare($sql);
+        $result=$stmt->execute(['id'=>$this->id]);
     }
 
     public function update(){

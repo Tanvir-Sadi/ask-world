@@ -29,14 +29,14 @@ class RegisteredUserController extends Controller
             return;
         }
 
-        $user->create([
+        $user = $user->create([
             'name'  =>  $request->name,
             'email' =>  $request->email,
             'password'=>password_hash($request->password, PASSWORD_BCRYPT)
         ]);
 
-        $_SESSION['name'] = $request->name;
-        $_SESSION['email'] = $request->email;
+        if (isset($request->remember_me))
+            $user->rememberMe(30);
 
         header('Location: /', true, 303);
     }

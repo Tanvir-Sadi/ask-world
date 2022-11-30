@@ -53,12 +53,12 @@ class AuthController extends Controller
 
     public function create(){
         if (!isLoggedIn()){
-            $_SESSION['name'] = $_COOKIE['name']    ??  null;
-            $_SESSION['email'] = $_COOKIE['email']  ??  null;
-            if (isLoggedIn()){
-                header('Location: ', true, 303);
-            }
+            $user = new User();
+            $user->startAuthSession($_COOKIE['token']??'');
         }
+        if (isLoggedIn())
+            header('Location: /', true, 303);
+
         View::call('login',null,'guest');
     }
 
@@ -78,30 +78,22 @@ class AuthController extends Controller
 
         $stmt = $user->prepare('SELECT * FROM user WHERE email= :email limit 1');
         $stmt->execute(['email'=>$request->email]);
-        $user = $stmt->fetch();
+        $user = $stmt->fetchObject(get_class($user));
 
         if(password_verify($request->password, $user->password)) {
-            $_SESSION['name'] = $user->name;
-            $_SESSION['email'] = $user->email;
-            if (isset($request->remember_me)){
-                setcookie('name', $user->name, time() + (86400 * 30), "/"); // 86400 = 1 day
-                setcookie('email', $user->email, time() + (86400 * 30), "/"); // 86400 = 1 day
-            }
+            $_SESSION['id'] = $user->id;
+            if (isset($request->remember_me))
+                $user->rememberMe(30);
             header('Location: /', true, 303);
         }else{
             $errors['password'][] = ['password'=> 'Password Does not match with current user'];
             View::call('login',compact('errors'),'guest');
-            return;
-
         }
     }
 
     public function destroy(){
         loggedIn();
-        unset($_SESSION['name']);
-        unset($_SESSION['email']);
-        setcookie('name', null, -1, '/');
-        setcookie('email', null, -1, '/');
+        auth()->forgetMe();
         header('Location: /login', true, 303);
     }
 }

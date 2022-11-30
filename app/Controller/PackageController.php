@@ -62,10 +62,9 @@ class PackageController extends Controller
 
     public function history(){
         loggedIn();
-        $histories = $this->stripe->subscriptions->all(['customer'=> auth()->customer_id]);
-//        $histories = $this->stripe->customers->allBalanceTransactions(
-//            'cus_Msb0PiqFoGyKNa',
-//        );
+        $histories = null;
+        if (auth()->customer_id)
+            $histories = $this->stripe->subscriptions->all(['customer'=> auth()->customer_id]);
         View::call('package.history',compact('histories'),'app');
     }
 }

@@ -29,6 +29,11 @@
                         class="w-full bg-white rounded border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                 </div>
 
+                <div class="relative mb-4">
+                    <input type="checkbox" id="remember_me" name="remember_me" class="bg-white rounded border border-gray-300 focus:border-amber-500 focus:ring-2 focus:ring-amber-200 text-base outline-none text-amber-500 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                    <label for="remember_me" class="leading-7 text-sm text-gray-600">Remember me</label>
+                </div>
+
                 <button type="submit"
                     class="text-white bg-amber-500 border-0 py-2 px-8 focus:outline-none hover:bg-amber-600 rounded text-lg">Login</button>
                 <p class="text-xs text-gray-500 mt-3">Don't have any account? <a class="underline" href="register">sign up</a></p>

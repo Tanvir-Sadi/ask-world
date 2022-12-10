@@ -1,7 +1,7 @@
 <div class="p-2">
     <div class="flex justify-between items-center bg-white shadow-sm rounded p-3 my-2">
         <h1 class="text-2xl"> <?= $question->title ?> </h1>
-        <a href="/question/create" class="shrink-0	bg-amber-500 rounded p-2 text-white font-semibold hover:bg-amber-600">Ask Questions</a>
+        <!-- <a href="/question/create" class="shrink-0	bg-amber-500 rounded p-2 text-white font-semibold hover:bg-amber-600">Ask Questions</a> -->
     </div>
 
     <section name="question" class="mb-5">

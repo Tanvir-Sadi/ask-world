@@ -5,7 +5,7 @@ namespace App\Controller;
 
 use App\Model\Answer;
 use App\Model\Question;
-use App\Model\Tag;
+use Luminous\Notification\Notification;
 use Luminous\Request\Request;
 use Luminous\View\View;
 use Luminous\Controller\Controller;
@@ -27,11 +27,16 @@ class AnswerController extends Controller
         View::call('question.create',null,'app');
     }
 
+    /**
+     * @throws \ErrorException
+     */
     public function store(){
         loggedIn();
         $request = new Request();
         $question = new Question();
         $answer = new Answer();
+        $notification = new Notification();
+
         $question = $question->find($this->question);
 
         $errors = $request->validate([
@@ -47,6 +52,8 @@ class AnswerController extends Controller
             'question_id' => $question->id,
             'user_id'     => auth()->id
         ]);
+
+        $notification->make("Someone Answer your question!", $question->title, auth());
 
         header('Location: /question/'.$question->id, true, 303);
     }

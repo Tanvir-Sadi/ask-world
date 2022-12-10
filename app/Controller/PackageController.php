@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 use App\Model\User;
-use Error;
+use Luminous\Notification\Notification;
 use Luminous\Request\Request;
 use Luminous\View\View;
 use Luminous\Controller\Controller;
+use Minishlink\WebPush\Subscription;
+use Minishlink\WebPush\WebPush;
 use Stripe\StripeClient;
 
 
@@ -66,5 +68,36 @@ class PackageController extends Controller
         if (auth()->customer_id)
             $histories = $this->stripe->subscriptions->all(['customer'=> auth()->customer_id]);
         View::call('package.history',compact('histories'),'app');
+    }
+
+    public function webhook(){
+        $notification = new Notification();
+        $notification->sendNotifications();
+
+//        $subscription = Subscription::create(json_decode(file_get_contents('php://input'), true));
+//
+//        $auth = array(
+//            'VAPID' => array(
+//                'subject' => 'https://github.com/Minishlink/web-push-php-example/',
+//                'publicKey' => 'BNM_Z-BptwxKRu0KWtZ6OT0anYfHJHVMPLKlCV0NWvY8uv400LL2z1HUqABCwL0lfL17E75zL4LFFhGomTKlank',
+//                'privateKey' => 'Ad9tG3dSHODqMDsCFVJ5m-lZnz5tV0lEJp1bDCLUqJc'
+//            ),
+//        );
+//
+//        $webPush = new WebPush($auth);
+//
+//        $report = $webPush->sendOneNotification(
+//            $subscription,
+//            "Hello Dear! 👋"
+//        );
+//
+//// handle eventual errors here, and remove the subscription from your server if it is expired
+//        $endpoint = $report->getRequest()->getUri()->__toString();
+//
+//        if ($report->isSuccess()) {
+//            echo "[v] Message sent successfully for subscription {$endpoint}.";
+//        } else {
+//            echo "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
+//        }
     }
 }

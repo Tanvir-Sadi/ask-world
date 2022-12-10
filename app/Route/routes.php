@@ -34,3 +34,4 @@ Router::post('/package', [PackageController::class, 'store']);
 Router::get('/package', [PackageController::class, 'index']);
 Router::get('/package/history', [PackageController::class, 'history']);
 
+Router::post('/notify', [PackageController::class, 'webhook']);

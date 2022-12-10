@@ -1,5 +1,5 @@
-<main class="m-2">
-    <div class="flex flex-row-reverse gap-2 justify-between items-end bg-white shadow-sm rounded p-3 my-2">
+<div class="p-3">
+    <div class="flex flex-row-reverse flex-wrap gap-2 justify-between items-end bg-white shadow-sm rounded p-3 my-2">
         <img src="assets\img\avatar.svg" />
         <div>
             <h1 class="text-2xl"><?= auth()->name ?></h1>
@@ -9,8 +9,14 @@
         </div>
     </div>
 
+    <div class="flex justify-between items-center bg-white shadow-sm rounded p-3 my-2">
+        <h1 class="text-2xl">Notification Settings</h1>
+        <button class="bg-slate-500 rounded p-2 text-white font-semibold hover:bg-slate-600"  id="push-subscription-button">Push Notifications</button>
+    </div>
+
+
         <div class="flex justify-between items-center bg-white shadow-sm rounded p-3">
-            <h1 class="text-2xl">
+            <h1 class="text-2xl">   
                 Your Asked Questions
             </h1>
             <a href="/question/create" class="bg-amber-500 rounded p-2 text-white font-semibold hover:bg-amber-600">Ask
@@ -49,4 +55,4 @@
 
         </section>
 
-</main>
+</div>

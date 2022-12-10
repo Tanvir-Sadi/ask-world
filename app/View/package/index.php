@@ -10,7 +10,7 @@
         <section class="text-gray-600 body-font overflow-hidden">
             <div class="flex flex-wrap -m-4">
                 <div class="p-4 xl:w-1/3 w-full">
-                    <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                    <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col overflow-hidden">
                         <h2 class="text-sm tracking-widest title-font mb-1 font-medium">START</h2>
                         <h1 class="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">Free</h1>
                         <p class="flex items-center text-gray-600 mb-2">
@@ -53,9 +53,7 @@
                 </div>
                 <div class="p-4 xl:w-1/3 w-full">
                     <div
-                        class="h-full p-6 rounded-lg border-2 border-amber-500 flex flex-col relative overflow-hidden">
-                        <span
-                            class="bg-amber-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">POPULAR</span>
+                        class="h-full p-6 rounded-lg border-2 border-amber-500 flex flex-col overflow-hidden">
                         <h2 class="text-sm tracking-widest title-font mb-1 font-medium">1000 Questions</h2>
                         <h1
                             class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
@@ -115,7 +113,7 @@
                 </div>
 
                 <div class="p-4 xl:w-1/3 w-full">
-                    <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                    <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col overflow-hidden">
                         <h2 class="text-sm tracking-widest title-font mb-1 font-medium">SPECIAL</h2>
                         <h1
                             class="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">

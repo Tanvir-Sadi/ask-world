@@ -72,6 +72,7 @@ class AuthController extends Controller
         ]);
 
         if($errors){
+            http_response_code(404);
             View::call('login',compact('errors'),'guest');
             return;
         }

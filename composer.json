@@ -15,7 +15,8 @@
     "ext-pdo": "*",
     "erusev/parsedown": "^1.7",
     "stripe/stripe-php": "^10.0",
-    "ext-openssl": "*"
+    "ext-openssl": "*",
+    "minishlink/web-push": "^7.0"
   },
   "autoload":  {
     "psr-4": {

@@ -35,6 +35,8 @@ class RegisteredUserController extends Controller
             'password'=>password_hash($request->password, PASSWORD_BCRYPT)
         ]);
 
+        $_SESSION['id'] = $user->id;
+
         if (isset($request->remember_me))
             $user->rememberMe(30);
 

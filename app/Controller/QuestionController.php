@@ -105,7 +105,7 @@ class QuestionController extends Controller
         foreach ($requestedTags as $requestedTag){
             if ($tag->isUnique('name', $requestedTag)==0){
                 $tag = $tag->create(['name'=> $requestedTag]);
-                echo json_encode($tag)."<br>";
+
             }
             else{
                 $stmt = $tag->prepare("SELECT * FROM tag WHERE name= :name limit 1");
@@ -119,7 +119,7 @@ class QuestionController extends Controller
                 'tag_id'=>$tag->id
             ]);
         }
-        header('Location: ', true, 303);
+        header('Location: /', true, 303);
     }
 
 

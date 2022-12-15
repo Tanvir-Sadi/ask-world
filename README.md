@@ -9,6 +9,7 @@ git clone https://github.com/Tanvir-Sadi/askWorld.git
 Install all the composer packages
 ```
 composer install
+composer dump-autoload
 ```
 Next copy `.env.example` to `.env` and `.htaccess.example` to `.htaccess` update `.env` file if necessary. Genarate VAPID KEY for web push functionality. [Learn More](https://www.stephane-quantin.com/en/tools/generators/vapid-keys)
 *Make sure you update your public vapid key also in `script.js`*
@@ -28,6 +29,6 @@ Import Table using `database.sql` files from this project directory. After that 
 Run Webserver and Enjoy!
 
 ```
-php -S localhost:4242 docroot=public
+php -S localhost:4242 --docroot=public
 ```
 

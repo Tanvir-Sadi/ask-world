@@ -32,3 +32,11 @@ Run Webserver and Enjoy!
 php -S localhost:4242 --docroot=public
 ```
 
+## Populate Database with dummy data
+Import `populate_db.sql` files from this project directory. Successfully doing so you will see that you will see
+
+![image](https://user-images.githubusercontent.com/48437977/208016594-48ea8966-725d-435d-8e8d-4f25060e01ac.png)
+
+Login with following credential.
+- **Email**: johndoe@example.com
+- **Password**: password

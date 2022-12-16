@@ -1,7 +1,7 @@
 <section class="text-gray-600 body-font">
     <div class=" px-5 py-24 flex flex-wrap items-center">
         <div class="lg:w-3/5 md:w-1/2 hidden md:block md:pr-16 lg:pr-0 pr-0">
-            <img class="lg:w-3/5" src="assets\img\login_bg.jpg" alt="Login Background" srcset="">
+            <img class="lg:w-3/5" src="assets\img\login_bg.webp" alt="Login Background" srcset="">
         </div>
         <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
             <form method="post" action="/login">
